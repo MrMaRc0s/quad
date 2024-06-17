@@ -1,27 +1,19 @@
-package piscine
-
-import "fmt"
-
 func QuadB(x, y int) {
-	if x < 1 || y < 1 {
+	if x <= 0 || y <= 0 {
 		return
 	}
-
-	x -= 1
-	y -= 1
-	for i := 0; i <= y; i++ {
-		var line string
-		for j := 0; j <= x; j++ {
-			if ((j == 0) && (i == 0)) || ((j == x) && (i == y) && (y != 0) && (x != 0)) {
-				line += "/"
-			} else if ((j == x) && (i == 0)) || ((j == 0) && (i == y)) {
-				line += "\\"
-			} else if i == 0 || i == y || j == 0 || j == x {
-				line += "*"
+	for i := 0; i < y; i++ {
+		for j := 0; j < x; j++ {
+			if (i == 0 && j == 0) || (i == y-1 && j == x-1) {
+				fmt.Print("/")
+			} else if (i == 0 && j == x-1) || (i == y-1 && j == 0) {
+				fmt.Print("\\")
+			} else if i == 0 || i == y-1 || j == 0 || j == x-1 {
+				fmt.Print("*")
 			} else {
-				line += " "
+				fmt.Print(" ")
 			}
 		}
-		fmt.Println(line)
+		fmt.Println()
 	}
 }
