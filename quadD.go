@@ -1,3 +1,5 @@
+package quadchecker
+
 func QuadD(x, y int) {
 	if x <= 0 || y <= 0 {
 		return
