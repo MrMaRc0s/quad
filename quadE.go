@@ -1,5 +1,7 @@
 package quadchecker
 
+import "fmt"
+
 func QuadE(x, y int) {
 	if x <= 0 || y <= 0 {
 		return
